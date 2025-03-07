@@ -23,6 +23,8 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 "
 
 termux_step_pre_configure() {
+	export LLVM_CONFIG=$TERMUX_PREFIX/bin/llvm-config
+	export PKG_CONFIG=$TERMUX_PREFIX/bin/pkg-config
 	termux_setup_gir
 	termux_setup_glib_cross_pkg_config_wrapper
 }
